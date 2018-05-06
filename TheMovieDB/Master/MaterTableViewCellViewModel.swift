@@ -10,7 +10,19 @@ import Foundation
 
 struct MaterTableViewCellViewModel {
 
-    func fetch(from urlString: String, completion:((Bool)->())) {
-        
+    let query: String
+    let currentPage: Int
+    
+    var movies: [Movie]? = []
+    
+    init(query: String, currentPage: Int) {
+        self.query = query
+        self.currentPage = currentPage
+    }
+    
+    func fetch(_ completion:CompletionBlock) {
+        let serviceController = ServiceController()
+        let params = MovieParams(query: query, page: currentPage)
+        serviceController.fetch(with: params, completion: completion)
     }
 }

@@ -12,7 +12,7 @@ class MasterTableViewCell: UITableViewCell {
 
     @IBOutlet var collectionView: UICollectionView!
     
-    let viewModel = MaterTableViewCellViewModel()
+    var viewModel: MaterTableViewCellViewModel?
     weak var parent: MasterViewController?
     
     override func awakeFromNib() {
@@ -20,14 +20,28 @@ class MasterTableViewCell: UITableViewCell {
         prepareForReuse()
     }
     
-    func configure(with urlString: String, parent: MasterViewController) {
+    func configure(with viewModel: MaterTableViewCellViewModel, parent: MasterViewController) {
+        self.viewModel = viewModel
         self.parent = parent
         
-        viewModel.fetch(from: urlString) { [unowned self] _ in
-            self.collectionView.reloadData()
+        viewModel.fetch { [weak self] (moviesResult, error) in
+            guard let movies = moviesResult?.movies else {
+                return
+            }
+            
+            print(movies)
+            
+            DispatchQueue.main.async {
+                self?.refreshMovies(movies)
+            }
         }
     }
 
+    private func refreshMovies(_ movies: [Movie]) {
+        viewModel?.movies?.append(contentsOf: movies)
+        collectionView.reloadData()
+    }
+    
     override func prepareForReuse() {
         
     }
@@ -36,7 +50,7 @@ class MasterTableViewCell: UITableViewCell {
 extension MasterTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel?.movies?.count ?? 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -45,6 +59,7 @@ extension MasterTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        parent?.performSegue(withIdentifier: "showDetail", sender: nil)
+        guard let movie = viewModel?.movies?[indexPath.row] else { return }
+        parent?.performSegue(withIdentifier: "showDetail", sender: movie)
     }
 }

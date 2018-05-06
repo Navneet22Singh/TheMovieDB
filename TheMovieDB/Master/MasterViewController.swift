@@ -24,6 +24,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+            controller.viewModel = DetailViewModel(title: "Detail", movie: sender as? Movie)
             controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
             controller.navigationItem.leftItemsSupplementBackButton = true
         }
@@ -45,8 +46,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MasterTableViewCell.self), for: indexPath)
         if let cell = cell as? MasterTableViewCell {
-            let urlString = viewModel.categories[indexPath.section].urlString
-            cell.configure(with: urlString, parent: self)
+            let cellViewModel = MaterTableViewCellViewModel(query: viewModel.categories[indexPath.section].descSortDescriptor, currentPage: 1)
+            cell.configure(with: cellViewModel, parent: self)
         }
         
         return cell

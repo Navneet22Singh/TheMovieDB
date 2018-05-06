@@ -35,7 +35,7 @@ struct MasterViewModel {
         // MARK: Sort Descriptors
         private var sortDescriptor: String {
             switch self {
-            case .popular: return "popularrity"
+            case .popular: return "popularity"
             case .topRated: return "vote_count"
             case .revenue: return "revenue"
             case .releaseDate: return "release_date"
@@ -56,6 +56,6 @@ struct MasterViewModel {
     
     init() {
         title = "Catalog"
-        categories = [.popular, .topRated, .revenue, .releaseDate]
+        categories = [.popular]
     }
 }

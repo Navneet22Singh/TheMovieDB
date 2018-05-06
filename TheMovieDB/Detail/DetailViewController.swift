@@ -14,10 +14,17 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     
+    var viewModel: DetailViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Details"
+        configureView()
+    }
+    
+    private func configureView() {
+        title = viewModel?.title
+        movieNameLabel.text = viewModel?.movie?.title
+        overviewLabel.text = viewModel?.movie?.overview
     }
 }
 
