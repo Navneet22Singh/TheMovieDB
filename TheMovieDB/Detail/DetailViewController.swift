@@ -10,36 +10,14 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.timestamp!.description
-            }
-        }
-    }
-
+    @IBOutlet weak var bannerImgView: UIImageView!
+    @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var overviewLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        configureView()
+        
+        title = "Details"
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    var detailItem: Event? {
-        didSet {
-            // Update the view.
-            configureView()
-        }
-    }
-
-
 }
 
