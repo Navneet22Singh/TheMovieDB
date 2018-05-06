@@ -33,6 +33,7 @@ class MasterCollectionViewCell: UICollectionViewCell {
     }
     
     private func fetchImage() {
+        activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         viewModel?.downloadImage { [weak self] _ in
             DispatchQueue.main.async {
@@ -44,6 +45,5 @@ class MasterCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         bannerImgView.image = nil
-        activityIndicator.isHidden = false
     }
 }

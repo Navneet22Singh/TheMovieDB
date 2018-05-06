@@ -20,9 +20,11 @@ class MasterTableViewCell: UITableViewCell {
         self.viewModel = viewModel
         self.parent = parent
         
-        viewModel.fetch { [weak self] _ in
+        viewModel.fetch { [weak self] success in
             DispatchQueue.main.async {
-                self?.collectionView.reloadData()
+                if success {
+                    self?.collectionView.reloadData()
+                }
             }
         }
     }

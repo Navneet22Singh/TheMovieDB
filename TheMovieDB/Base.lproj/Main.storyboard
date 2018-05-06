@@ -138,6 +138,7 @@
                                                             </activityIndicatorView>
                                                         </subviews>
                                                     </view>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="4Wk-XB-Fkq" secondAttribute="trailing" id="0AX-XN-A8E"/>
                                                         <constraint firstAttribute="bottom" secondItem="4Wk-XB-Fkq" secondAttribute="bottom" id="4Jr-FZ-205"/>
