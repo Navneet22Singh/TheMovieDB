@@ -14,19 +14,32 @@ class MasterTableViewCell: UITableViewCell {
     
     var viewModel: MasterTableViewCellViewModel?
     weak var parent: MasterViewController?
+    fileprivate var isLoading = false
     
     // MARK - Configure View
     func configure(with viewModel: MasterTableViewCellViewModel, parent: MasterViewController) {
         self.viewModel = viewModel
         self.parent = parent
-        
-        viewModel.fetch { [weak self] success in
-            DispatchQueue.main.async {
-                if success {
-                    self?.collectionView.reloadData()
-                }
+        loadPage(viewModel.currentPage)
+    }
+    
+    // MARK: - Fetch results
+    fileprivate func loadPage(_ page: Int) {
+        fetchResults(for: page) { [weak self] success in
+            if success {
+                self?.collectionView.reloadData()
             }
         }
+    }
+    
+    fileprivate func fetchResults(for page: Int, completion: @escaping (Bool) -> ()) {
+        isLoading = true
+        viewModel?.fetch(for: page, completion: { [weak self] success in
+            DispatchQueue.main.async {
+                self?.isLoading = false
+                completion(success)
+            }
+        })
     }
 }
 
@@ -48,5 +61,17 @@ extension MasterTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let movie = viewModel?.movies[indexPath.row] else { return }
         parent?.performSegue(withIdentifier: "showDetail", sender: movie)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        guard
+            let viewModel = viewModel,
+            indexPath.row == viewModel.movies.count - 3,
+            viewModel.currentPage < viewModel.totalPages,
+            !isLoading
+            else { return }
+        
+        loadPage(viewModel.currentPage + 1)
     }
 }
