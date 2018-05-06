@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var bannerImgView: UIImageView!
     @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     
     var viewModel: DetailViewModel?
@@ -26,6 +27,7 @@ class DetailViewController: UIViewController {
         
         bannerImgView.image = viewModel?.image
         movieNameLabel.text = viewModel?.movieName
+        ratingLabel.text = viewModel?.rating
         overviewLabel.text = viewModel?.overview
     }
 }

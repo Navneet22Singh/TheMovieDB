@@ -26,7 +26,7 @@ public struct MoviesResult: Codable {
 struct Movie: Codable {
     let title: String?
     let overview: String?
-    let rating: Float?
+    let rating: Double?
     let posterPath: String?
     
     enum CodingKeys: String, CodingKey {
