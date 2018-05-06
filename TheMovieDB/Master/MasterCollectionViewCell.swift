@@ -29,6 +29,7 @@ class MasterCollectionViewCell: UICollectionViewCell {
         }
         
         bannerImgView.image = image
+        activityIndicator.isHidden = true
     }
     
     private func fetchImage() {

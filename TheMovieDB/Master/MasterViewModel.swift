@@ -51,7 +51,7 @@ struct MasterViewModel {
     
     init() {
         title = "Catalog"
-        categories = [.popular]
-//        categories = [.popular, .topRated, .revenue, .releaseDate]
+//        categories = [.popular]
+        categories = [.popular, .topRated, .revenue, .releaseDate]
     }
 }

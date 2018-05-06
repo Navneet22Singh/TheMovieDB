@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct MasterTableViewCellViewModel {
+class MasterTableViewCellViewModel {
 
     let query: String
     let currentPage: Int
@@ -22,9 +22,17 @@ struct MasterTableViewCellViewModel {
         self.cache = cache
     }
     
-    func fetch(_ completion:CompletionBlock) {
+    func fetch(_ completion: @escaping ((Bool) -> ())) {
         let serviceController = ServiceController()
         let params = MovieParams(query: query, page: currentPage)
-        serviceController.fetch(with: params, completion: completion)
+        serviceController.fetch(with: params, completion: { [weak self] (moviesResult, error) in
+            guard let movies = moviesResult?.movies else {
+                completion(false)
+                return
+            }
+            
+            self?.movies.append(contentsOf: movies)
+            completion(true)
+        })
     }
 }

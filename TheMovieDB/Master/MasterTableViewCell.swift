@@ -15,40 +15,24 @@ class MasterTableViewCell: UITableViewCell {
     var viewModel: MasterTableViewCellViewModel?
     weak var parent: MasterViewController?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        prepareForReuse()
-    }
-    
+    // MARK - Configure View
     func configure(with viewModel: MasterTableViewCellViewModel, parent: MasterViewController) {
         self.viewModel = viewModel
         self.parent = parent
         
-        viewModel.fetch { [weak self] (moviesResult, error) in
-            guard let movies = moviesResult?.movies else {
-                return
-            }
-                        
+        viewModel.fetch { [weak self] _ in
             DispatchQueue.main.async {
-                self?.refreshMovies(movies)
+                self?.collectionView.reloadData()
             }
         }
     }
-
-    private func refreshMovies(_ movies: [Movie]) {
-        viewModel?.movies.append(contentsOf: movies)
-        collectionView.reloadData()
-    }
-    
-    override func prepareForReuse() {
-        
-    }
 }
 
+// MARK: - Collection View
 extension MasterTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.movies.count ?? 3
+        return viewModel?.movies.count ?? 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
