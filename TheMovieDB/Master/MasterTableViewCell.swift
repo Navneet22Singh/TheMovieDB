@@ -12,7 +12,7 @@ class MasterTableViewCell: UITableViewCell {
 
     @IBOutlet var collectionView: UICollectionView!
     
-    var viewModel: MaterTableViewCellViewModel?
+    var viewModel: MasterTableViewCellViewModel?
     weak var parent: MasterViewController?
     
     override func awakeFromNib() {
@@ -20,7 +20,7 @@ class MasterTableViewCell: UITableViewCell {
         prepareForReuse()
     }
     
-    func configure(with viewModel: MaterTableViewCellViewModel, parent: MasterViewController) {
+    func configure(with viewModel: MasterTableViewCellViewModel, parent: MasterViewController) {
         self.viewModel = viewModel
         self.parent = parent
         
@@ -28,9 +28,7 @@ class MasterTableViewCell: UITableViewCell {
             guard let movies = moviesResult?.movies else {
                 return
             }
-            
-            print(movies)
-            
+                        
             DispatchQueue.main.async {
                 self?.refreshMovies(movies)
             }
@@ -38,7 +36,7 @@ class MasterTableViewCell: UITableViewCell {
     }
 
     private func refreshMovies(_ movies: [Movie]) {
-        viewModel?.movies?.append(contentsOf: movies)
+        viewModel?.movies.append(contentsOf: movies)
         collectionView.reloadData()
     }
     
@@ -50,16 +48,19 @@ class MasterTableViewCell: UITableViewCell {
 extension MasterTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.movies?.count ?? 3
+        return viewModel?.movies.count ?? 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MasterCollectionViewCell.self), for: indexPath)
+        if let cell = cell as? MasterCollectionViewCell {
+            cell.configureView(with: MasterCollectionViewCellModel(path: viewModel?.movies[indexPath.row].posterPath, cache: viewModel?.cache))
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let movie = viewModel?.movies?[indexPath.row] else { return }
+        guard let movie = viewModel?.movies[indexPath.row] else { return }
         parent?.performSegue(withIdentifier: "showDetail", sender: movie)
     }
 }

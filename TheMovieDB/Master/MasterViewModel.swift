@@ -27,11 +27,6 @@ struct MasterViewModel {
             }
         }
         
-        // MARK: URL
-        var urlString: String {
-            return "https://api.themoviedb.org/3/discover/movie?api_key=92902f3b6e447dc1b5ae67621de4db57&sort_by=\(descSortDescriptor)&page=1"
-        }
-        
         // MARK: Sort Descriptors
         private var sortDescriptor: String {
             switch self {
@@ -57,5 +52,6 @@ struct MasterViewModel {
     init() {
         title = "Catalog"
         categories = [.popular]
+//        categories = [.popular, .topRated, .revenue, .releaseDate]
     }
 }

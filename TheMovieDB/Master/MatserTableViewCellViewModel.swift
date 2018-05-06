@@ -1,5 +1,5 @@
 //
-//  MaterTableViewCellViewModel.swift
+//  MasterTableViewCellViewModel.swift
 //  TheMovieDB
 //
 //  Created by Navneet on 5/6/18.
@@ -7,17 +7,19 @@
 //
 
 import Foundation
+import UIKit
 
-struct MaterTableViewCellViewModel {
+struct MasterTableViewCellViewModel {
 
     let query: String
     let currentPage: Int
+    let cache: NSCache<NSString, UIImage>
+    var movies: [Movie] = []
     
-    var movies: [Movie]? = []
-    
-    init(query: String, currentPage: Int) {
+    init(query: String, currentPage: Int, cache: NSCache<NSString, UIImage>) {
         self.query = query
         self.currentPage = currentPage
+        self.cache = cache
     }
     
     func fetch(_ completion:CompletionBlock) {

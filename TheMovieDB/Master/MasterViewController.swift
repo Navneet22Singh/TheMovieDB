@@ -14,6 +14,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
     let viewModel = MasterViewModel()
+    let cache = NSCache<NSString, UIImage>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MasterTableViewCell.self), for: indexPath)
         if let cell = cell as? MasterTableViewCell {
-            let cellViewModel = MaterTableViewCellViewModel(query: viewModel.categories[indexPath.section].descSortDescriptor, currentPage: 1)
+            let cellViewModel = MasterTableViewCellViewModel(query: viewModel.categories[indexPath.section].descSortDescriptor, currentPage: 1, cache: cache)
             cell.configure(with: cellViewModel, parent: self)
         }
         

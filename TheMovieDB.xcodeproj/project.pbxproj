@@ -16,7 +16,7 @@
 		533CAE45209F0D5F000839D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533CAE43209F0D5F000839D9 /* LaunchScreen.storyboard */; };
 		533CAE50209F0D5F000839D9 /* TheMovieDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CAE4F209F0D5F000839D9 /* TheMovieDBTests.swift */; };
 		533CAE5F209F11F7000839D9 /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CAE5E209F11F7000839D9 /* MasterTableViewCell.swift */; };
-		533CAE61209F1814000839D9 /* MaterTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CAE60209F1814000839D9 /* MaterTableViewCellViewModel.swift */; };
+		533CAE61209F1814000839D9 /* MatserTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CAE60209F1814000839D9 /* MatserTableViewCellViewModel.swift */; };
 		533CAE63209F1842000839D9 /* MasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CAE62209F1842000839D9 /* MasterViewModel.swift */; };
 		533CAE7C209F342B000839D9 /* ServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CAE7B209F342B000839D9 /* ServiceController.swift */; };
 		533CAE7E209F3457000839D9 /* Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CAE7D209F3457000839D9 /* Buildable.swift */; };
@@ -24,6 +24,8 @@
 		533CAE82209F34C0000839D9 /* MoviesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CAE81209F34C0000839D9 /* MoviesResult.swift */; };
 		533CAE84209F3A31000839D9 /* MovieParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CAE83209F3A31000839D9 /* MovieParams.swift */; };
 		533CAE86209F4539000839D9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CAE85209F4539000839D9 /* DetailViewModel.swift */; };
+		533CAE88209F480F000839D9 /* MasterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CAE87209F480F000839D9 /* MasterCollectionViewCell.swift */; };
+		533CAE8A209F4833000839D9 /* MasterCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CAE89209F4833000839D9 /* MasterCollectionViewCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,7 @@
 		533CAE4F209F0D5F000839D9 /* TheMovieDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBTests.swift; sourceTree = "<group>"; };
 		533CAE51209F0D5F000839D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		533CAE5E209F11F7000839D9 /* MasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
-		533CAE60209F1814000839D9 /* MaterTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		533CAE60209F1814000839D9 /* MatserTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatserTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		533CAE62209F1842000839D9 /* MasterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewModel.swift; sourceTree = "<group>"; };
 		533CAE7B209F342B000839D9 /* ServiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceController.swift; sourceTree = "<group>"; };
 		533CAE7D209F3457000839D9 /* Buildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildable.swift; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		533CAE81209F34C0000839D9 /* MoviesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResult.swift; sourceTree = "<group>"; };
 		533CAE83209F3A31000839D9 /* MovieParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieParams.swift; sourceTree = "<group>"; };
 		533CAE85209F4539000839D9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		533CAE87209F480F000839D9 /* MasterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCollectionViewCell.swift; sourceTree = "<group>"; };
+		533CAE89209F4833000839D9 /* MasterCollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCollectionViewCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +139,10 @@
 			children = (
 				533CAE62209F1842000839D9 /* MasterViewModel.swift */,
 				533CAE3A209F0D5F000839D9 /* MasterViewController.swift */,
-				533CAE60209F1814000839D9 /* MaterTableViewCellViewModel.swift */,
+				533CAE60209F1814000839D9 /* MatserTableViewCellViewModel.swift */,
 				533CAE5E209F11F7000839D9 /* MasterTableViewCell.swift */,
+				533CAE89209F4833000839D9 /* MasterCollectionViewCellModel.swift */,
+				533CAE87209F480F000839D9 /* MasterCollectionViewCell.swift */,
 			);
 			path = Master;
 			sourceTree = "<group>";
@@ -257,13 +263,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				533CAE63209F1842000839D9 /* MasterViewModel.swift in Sources */,
-				533CAE61209F1814000839D9 /* MaterTableViewCellViewModel.swift in Sources */,
+				533CAE61209F1814000839D9 /* MatserTableViewCellViewModel.swift in Sources */,
+				533CAE8A209F4833000839D9 /* MasterCollectionViewCellModel.swift in Sources */,
 				533CAE80209F3477000839D9 /* NetworkConstants.swift in Sources */,
 				533CAE82209F34C0000839D9 /* MoviesResult.swift in Sources */,
 				533CAE5F209F11F7000839D9 /* MasterTableViewCell.swift in Sources */,
 				533CAE39209F0D5F000839D9 /* TheMovieDB.xcdatamodeld in Sources */,
 				533CAE36209F0D5F000839D9 /* AppDelegate.swift in Sources */,
 				533CAE3B209F0D5F000839D9 /* MasterViewController.swift in Sources */,
+				533CAE88209F480F000839D9 /* MasterCollectionViewCell.swift in Sources */,
 				533CAE84209F3A31000839D9 /* MovieParams.swift in Sources */,
 				533CAE86209F4539000839D9 /* DetailViewModel.swift in Sources */,
 				533CAE7E209F3457000839D9 /* Buildable.swift in Sources */,
