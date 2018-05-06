@@ -7,8 +7,26 @@
 //
 
 import Foundation
+import UIKit
 
 struct DetailViewModel {
-    let title: String
-    let movie: Movie?
+    let title = "Details"
+    
+    let movieName: String?
+    let overview: String?
+    let image: UIImage
+    
+    let imageCache: NSCache<NSString, UIImage>
+    
+    init(movie: Movie?, cache: NSCache<NSString, UIImage>) {
+        imageCache = cache
+        movieName = movie?.title
+        overview = movie?.overview
+        
+        if let path = movie?.posterPath as NSString? {
+            image = imageCache.object(forKey: path) ?? #imageLiteral(resourceName: "default_image")
+        } else {
+            image = #imageLiteral(resourceName: "default_image")
+        }
+    }
 }

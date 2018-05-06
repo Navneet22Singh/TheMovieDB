@@ -23,8 +23,10 @@ class DetailViewController: UIViewController {
     
     private func configureView() {
         title = viewModel?.title
-        movieNameLabel.text = viewModel?.movie?.title
-        overviewLabel.text = viewModel?.movie?.overview
+        
+        bannerImgView.image = viewModel?.image
+        movieNameLabel.text = viewModel?.movieName
+        overviewLabel.text = viewModel?.overview
     }
 }
 

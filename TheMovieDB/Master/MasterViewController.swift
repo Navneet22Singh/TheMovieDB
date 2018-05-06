@@ -25,7 +25,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-            controller.viewModel = DetailViewModel(title: "Detail", movie: sender as? Movie)
+            controller.viewModel = DetailViewModel(movie: sender as? Movie, cache: cache)
             controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
             controller.navigationItem.leftItemsSupplementBackButton = true
         }
