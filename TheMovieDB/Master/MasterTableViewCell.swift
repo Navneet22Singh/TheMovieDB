@@ -11,15 +11,21 @@ import UIKit
 class MasterTableViewCell: UITableViewCell {
 
     @IBOutlet var collectionView: UICollectionView!
-    var viewModel: MaterTableViewCellViewModel?
+    
+    let viewModel = MaterTableViewCellViewModel()
+    weak var parent: MasterViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         prepareForReuse()
     }
     
-    func configure() {
-
+    func configure(with urlString: String, parent: MasterViewController) {
+        self.parent = parent
+        
+        viewModel.fetch(from: urlString) { [unowned self] _ in
+            self.collectionView.reloadData()
+        }
     }
 
     override func prepareForReuse() {
@@ -39,6 +45,6 @@ extension MasterTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        parent?.performSegue(withIdentifier: "showDetail", sender: nil)
     }
 }

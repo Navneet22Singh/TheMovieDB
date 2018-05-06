@@ -9,5 +9,8 @@
 import Foundation
 
 struct MaterTableViewCellViewModel {
-    let urlString: String
+
+    func fetch(from urlString: String, completion:((Bool)->())) {
+        
+    }
 }

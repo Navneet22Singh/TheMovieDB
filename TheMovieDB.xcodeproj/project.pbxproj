@@ -88,11 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				533CAE35209F0D5F000839D9 /* AppDelegate.swift */,
-				533CAE62209F1842000839D9 /* MasterViewModel.swift */,
-				533CAE3A209F0D5F000839D9 /* MasterViewController.swift */,
-				533CAE60209F1814000839D9 /* MaterTableViewCellViewModel.swift */,
-				533CAE5E209F11F7000839D9 /* MasterTableViewCell.swift */,
-				533CAE3C209F0D5F000839D9 /* DetailViewController.swift */,
+				533CAE78209F2947000839D9 /* Detail */,
+				533CAE79209F294D000839D9 /* Master */,
 				533CAE3E209F0D5F000839D9 /* Main.storyboard */,
 				533CAE41209F0D5F000839D9 /* Assets.xcassets */,
 				533CAE43209F0D5F000839D9 /* LaunchScreen.storyboard */,
@@ -109,6 +106,25 @@
 				533CAE51209F0D5F000839D9 /* Info.plist */,
 			);
 			path = TheMovieDBTests;
+			sourceTree = "<group>";
+		};
+		533CAE78209F2947000839D9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				533CAE3C209F0D5F000839D9 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		533CAE79209F294D000839D9 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				533CAE62209F1842000839D9 /* MasterViewModel.swift */,
+				533CAE3A209F0D5F000839D9 /* MasterViewController.swift */,
+				533CAE60209F1814000839D9 /* MaterTableViewCellViewModel.swift */,
+				533CAE5E209F11F7000839D9 /* MasterTableViewCell.swift */,
+			);
+			path = Master;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
