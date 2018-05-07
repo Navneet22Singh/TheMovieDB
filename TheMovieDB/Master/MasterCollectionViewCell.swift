@@ -30,7 +30,7 @@ class MasterCollectionViewCell: UICollectionViewCell {
         }
         
         bannerImgView.image = image
-        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
     }
     
     // Fetch image
@@ -48,5 +48,6 @@ class MasterCollectionViewCell: UICollectionViewCell {
     // Flush items
     override func prepareForReuse() {
         bannerImgView.image = nil
+        activityIndicator.isHidden = false
     }
 }
