@@ -34,48 +34,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="J3B-Hj-aS6">
-                                <rect key="frame" x="0.0" y="72" width="375" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48J-3m-snK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8g-3J-XdK">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="J3B-Hj-aS6">
+                                                <rect key="frame" x="8" y="8" width="359" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="qQe-Qz-g2z"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixV-u9-O4m" userLabel="Movie Name">
+                                                <rect key="frame" x="8" y="216" width="359" height="41"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7I-U9-R32" userLabel="Rating">
+                                                <rect key="frame" x="8" y="265" width="359" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeK-gc-fJU" userLabel="Overview">
+                                                <rect key="frame" x="8" y="302" width="359" height="286.5"/>
+                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ixV-u9-O4m" secondAttribute="trailing" constant="8" id="1jZ-o1-FXN"/>
+                                            <constraint firstItem="S7I-U9-R32" firstAttribute="top" secondItem="ixV-u9-O4m" secondAttribute="bottom" constant="8" id="4IU-ub-bsb"/>
+                                            <constraint firstAttribute="trailing" secondItem="FeK-gc-fJU" secondAttribute="trailing" constant="8" id="64g-mY-3yc"/>
+                                            <constraint firstItem="J3B-Hj-aS6" firstAttribute="top" secondItem="F8g-3J-XdK" secondAttribute="top" constant="8" id="Ic2-HP-0RO"/>
+                                            <constraint firstAttribute="trailing" secondItem="J3B-Hj-aS6" secondAttribute="trailing" constant="8" id="Laq-Uu-vEh"/>
+                                            <constraint firstItem="FeK-gc-fJU" firstAttribute="top" secondItem="S7I-U9-R32" secondAttribute="bottom" constant="8" id="MWm-XC-gwq"/>
+                                            <constraint firstItem="J3B-Hj-aS6" firstAttribute="centerX" secondItem="F8g-3J-XdK" secondAttribute="centerX" id="RNv-6j-wX9"/>
+                                            <constraint firstItem="J3B-Hj-aS6" firstAttribute="leading" secondItem="F8g-3J-XdK" secondAttribute="leading" constant="8" id="U7S-pa-EWD"/>
+                                            <constraint firstItem="ixV-u9-O4m" firstAttribute="top" secondItem="J3B-Hj-aS6" secondAttribute="bottom" constant="8" id="VRs-Xp-elc"/>
+                                            <constraint firstItem="FeK-gc-fJU" firstAttribute="leading" secondItem="F8g-3J-XdK" secondAttribute="leading" constant="8" id="e4f-dW-Nav"/>
+                                            <constraint firstItem="S7I-U9-R32" firstAttribute="leading" secondItem="F8g-3J-XdK" secondAttribute="leading" constant="8" id="gzc-EG-e3C"/>
+                                            <constraint firstAttribute="trailing" secondItem="S7I-U9-R32" secondAttribute="trailing" constant="8" id="lQ4-au-Myc"/>
+                                            <constraint firstAttribute="bottom" secondItem="FeK-gc-fJU" secondAttribute="bottom" constant="8" id="qnf-x9-12W"/>
+                                            <constraint firstItem="ixV-u9-O4m" firstAttribute="leading" secondItem="F8g-3J-XdK" secondAttribute="leading" constant="8" id="sLj-HX-efB"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="uby-wh-Quj"/>
+                                    <constraint firstAttribute="trailing" secondItem="F8g-3J-XdK" secondAttribute="trailing" id="FYL-YX-7UK"/>
+                                    <constraint firstItem="F8g-3J-XdK" firstAttribute="top" secondItem="48J-3m-snK" secondAttribute="top" id="IYD-BL-5RQ"/>
+                                    <constraint firstItem="F8g-3J-XdK" firstAttribute="leading" secondItem="48J-3m-snK" secondAttribute="leading" id="UhX-BF-5gv"/>
+                                    <constraint firstAttribute="bottom" secondItem="F8g-3J-XdK" secondAttribute="bottom" id="tb8-8E-KHh"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixV-u9-O4m" userLabel="Movie Name">
-                                <rect key="frame" x="8" y="280" width="359" height="41"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeK-gc-fJU" userLabel="Overview">
-                                <rect key="frame" x="8" y="366" width="359" height="286.5"/>
-                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7I-U9-R32" userLabel="Rating">
-                                <rect key="frame" x="8" y="329" width="359" height="29"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ixV-u9-O4m" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="8" id="6BC-Uq-CeD"/>
-                            <constraint firstItem="ixV-u9-O4m" firstAttribute="trailing" secondItem="VUw-jc-0yf" secondAttribute="trailing" constant="-8" id="8wg-t9-hBm"/>
-                            <constraint firstItem="ixV-u9-O4m" firstAttribute="top" secondItem="J3B-Hj-aS6" secondAttribute="bottom" constant="8" id="JVv-eJ-zaa"/>
-                            <constraint firstItem="FeK-gc-fJU" firstAttribute="top" secondItem="S7I-U9-R32" secondAttribute="bottom" constant="8" id="KjG-c1-TZa"/>
-                            <constraint firstItem="FeK-gc-fJU" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="8" id="QYD-79-uen"/>
-                            <constraint firstItem="S7I-U9-R32" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="8" id="Qpe-eX-nc8"/>
-                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="S7I-U9-R32" secondAttribute="trailing" constant="8" id="UFg-ry-Yfl"/>
-                            <constraint firstItem="FeK-gc-fJU" firstAttribute="trailing" secondItem="VUw-jc-0yf" secondAttribute="trailing" constant="-8" id="UKr-zX-x6W"/>
-                            <constraint firstItem="J3B-Hj-aS6" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="W3b-gZ-2G0"/>
-                            <constraint firstItem="J3B-Hj-aS6" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="8" id="ipz-js-Tc1"/>
-                            <constraint firstItem="J3B-Hj-aS6" firstAttribute="trailing" secondItem="VUw-jc-0yf" secondAttribute="trailing" id="ote-YC-2JU"/>
-                            <constraint firstItem="S7I-U9-R32" firstAttribute="top" secondItem="ixV-u9-O4m" secondAttribute="bottom" constant="8" id="xqZ-sa-j6I"/>
+                            <constraint firstItem="48J-3m-snK" firstAttribute="top" secondItem="svH-Pt-448" secondAttribute="top" id="EzN-cO-3k2"/>
+                            <constraint firstItem="48J-3m-snK" firstAttribute="leading" secondItem="MpI-V2-den" secondAttribute="leading" id="RY1-hq-gXZ"/>
+                            <constraint firstItem="48J-3m-snK" firstAttribute="bottom" secondItem="MpI-V2-den" secondAttribute="bottom" id="jK0-yX-1iI"/>
+                            <constraint firstItem="48J-3m-snK" firstAttribute="trailing" secondItem="MpI-V2-den" secondAttribute="trailing" id="piv-kD-iVJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
+                        <viewLayoutGuide key="safeArea" id="MpI-V2-den"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
