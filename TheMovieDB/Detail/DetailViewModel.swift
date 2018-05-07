@@ -17,6 +17,7 @@ struct DetailViewModel {
     let rating: String?
     let image: UIImage
     
+    // Init
     init(movie: Movie?) {
         movieName = movie?.title
         overview = movie?.overview

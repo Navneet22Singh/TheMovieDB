@@ -15,7 +15,7 @@ enum MoviesCategory {
     case revenue
     case releaseDate
     
-    // MARK: Title
+    // Title
     var title: String {
         switch self {
         case .popular: return "Popular"
@@ -25,7 +25,7 @@ enum MoviesCategory {
         }
     }
     
-    // MARK: Sort Descriptors
+    // Sort Descriptors
     private var sortDescriptor: String {
         switch self {
         case .popular: return "popularity"

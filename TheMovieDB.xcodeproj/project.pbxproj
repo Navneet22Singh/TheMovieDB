@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				533CAE35209F0D5F000839D9 /* AppDelegate.swift */,
-				53B8C96120A06C2E0081C667 /* Caching.swift */,
+				53B8C96320A073250081C667 /* Helpers */,
 				53B8C95C20A0677E0081C667 /* Extensions */,
 				533CAE78209F2947000839D9 /* Detail */,
 				533CAE79209F294D000839D9 /* Master */,
@@ -235,6 +235,14 @@
 				53B8C95D20A067A30081C667 /* Array+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		53B8C96320A073250081C667 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				53B8C96120A06C2E0081C667 /* Caching.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		867D6C976B8F7F5F79801142 /* Pods */ = {

@@ -16,11 +16,13 @@ class MasterTableViewCellViewModel {
     var movies: [Movie] = []
     var totalPages: Int = 1
 
+    // Init
     init(query: String, currentPage: Int) {
         self.query = query
         self.currentPage = currentPage
     }
     
+    // Fetch Movies for page
     func fetch(for page: Int, serviceController: Fetchable = ServiceController(), completion: @escaping ((Bool) -> ())) {
         let params = MovieParams(query: query, page: page)
         serviceController.fetch(with: params, completion: { [weak self] (moviesResult, error) in

@@ -26,7 +26,6 @@ struct MovieParams: Buildable {
             return nil
         }
         
-        
         let baseURL = MovieConstants.baseURL.value + "api_key=\(MovieConstants.apiKey.value)"
         let urlStr = baseURL + "&sort_by=\(encodedString)" + "&page=\(page)"
         return urlStr

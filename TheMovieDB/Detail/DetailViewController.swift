@@ -22,6 +22,7 @@ class DetailViewController: UIViewController {
         configureView()
     }
     
+    // Congigure View
     private func configureView() {
         title = viewModel?.title
         

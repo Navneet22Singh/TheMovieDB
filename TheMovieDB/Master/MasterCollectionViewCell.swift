@@ -20,6 +20,7 @@ class MasterCollectionViewCell: UICollectionViewCell {
         prepareForReuse()
     }
     
+    // Configure view
     func configureView(with viewModel: MasterCollectionViewCellModel) {
         self.viewModel = viewModel
         
@@ -32,6 +33,7 @@ class MasterCollectionViewCell: UICollectionViewCell {
         activityIndicator.isHidden = true
     }
     
+    // Fetch image
     private func fetchImage() {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
@@ -43,6 +45,7 @@ class MasterCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // Flush items
     override func prepareForReuse() {
         bannerImgView.image = nil
     }

@@ -16,6 +16,7 @@ class MasterCollectionViewCellModel {
     
     var image: UIImage?
     
+    // int
     init(path: String?) {
         imagePath = path
         
@@ -26,10 +27,12 @@ class MasterCollectionViewCellModel {
         }
     }
     
+    // Cache incoming image
     fileprivate func cacheImage(_ image: UIImage, forKey key: String) {
         Caching.shared.setImage(image, forKey: key as NSString)
     }
     
+    // Download image
     func downloadImage(_ serviceController: Fetchable = ServiceController(), completion: @escaping ((Bool) -> ())) {
         guard let path = imagePath else {
             image = defaultImage
@@ -50,5 +53,4 @@ class MasterCollectionViewCellModel {
             completion(true)
         }
     }
-    
 }
