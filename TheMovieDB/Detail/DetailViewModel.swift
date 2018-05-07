@@ -23,7 +23,6 @@ struct DetailViewModel {
         imageCache = cache
         movieName = movie?.title
         overview = movie?.overview
-        
         rating = "\(String(describing: movie?.rating ?? 0)) rating"
         
         if let path = movie?.posterPath as NSString? {

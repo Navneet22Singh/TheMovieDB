@@ -28,14 +28,14 @@ class MasterCollectionViewCellModel {
         }
     }
     
-    func downloadImage(_ completion: @escaping ((Bool) -> ())) {
+    func downloadImage(_ serviceController: Fetchable = ServiceController(), completion: @escaping ((Bool) -> ())) {
         guard let path = imagePath else {
+            image = defaultImage
             completion(false)
             return
         }
         
         let params = BannerImageParams(path: path)
-        let serviceController = ServiceController()
         serviceController.download(with: params) { [weak self] (image, error) in
             guard let image = image else {
                 self?.image = self?.defaultImage

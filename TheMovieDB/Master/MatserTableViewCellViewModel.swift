@@ -23,11 +23,10 @@ class MasterTableViewCellViewModel {
         self.cache = cache
     }
     
-    func fetch(for page: Int, completion: @escaping ((Bool) -> ())) {
-        let serviceController = ServiceController()
+    func fetch(for page: Int, serviceController: Fetchable = ServiceController(), completion: @escaping ((Bool) -> ())) {
         let params = MovieParams(query: query, page: page)
         serviceController.fetch(with: params, completion: { [weak self] (moviesResult, error) in
-            guard let moviesResult = moviesResult else {
+            guard let moviesResult = moviesResult, moviesResult.movies.count > 0 else {
                 completion(false)
                 return
             }
