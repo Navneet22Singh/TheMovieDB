@@ -21,7 +21,7 @@ struct DetailViewModel {
         overview = movie?.overview
         
         if let ratingValue = movie?.rating, ratingValue > 0.0 {
-            rating = "\(String(describing: ratingValue)) rating"
+            rating = "\(String(describing: ratingValue))/10 rating"
         } else {
             rating = "Rating not avaibale"
         }
