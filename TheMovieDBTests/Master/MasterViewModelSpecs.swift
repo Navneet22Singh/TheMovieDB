@@ -21,7 +21,7 @@ class MasterViewModelSpecs: QuickSpec {
         }
         
         describe("Verify view models attributes") {
-            context("when intialised", closure: {
+            context("when initialized", closure: {
                 it("should have correct title", closure: {
                     expect(viewModel.title.lowercased()) == "Catalog".lowercased()
                 })

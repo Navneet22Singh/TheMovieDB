@@ -18,7 +18,7 @@ class MasterCollectionViewCellModelSpecs: QuickSpec {
         let cache = NSCache<NSString, UIImage>()
 
         describe("Verify view models attributes") {
-            context("when intialised with some poster path", closure: {
+            context("when initialized with some poster path", closure: {
                 let movie = Movie(title: "Batman", overview: "Sample", rating: 8.7, posterPath: "somevalue")
                 beforeEach() {
                     viewModel = MasterCollectionViewCellModel(path: movie.posterPath, cache: cache)
@@ -37,7 +37,7 @@ class MasterCollectionViewCellModelSpecs: QuickSpec {
                 })
             })
             
-            context("when intialised with nil poster path", closure: {
+            context("when initialized with nil poster path", closure: {
                 let cache = NSCache<NSString, UIImage>()
                 let movie = Movie(title: "Batman", overview: "Sample", rating: 8.7, posterPath: nil)
                 beforeEach() {

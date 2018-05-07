@@ -23,7 +23,12 @@ struct DetailViewModel {
         imageCache = cache
         movieName = movie?.title
         overview = movie?.overview
-        rating = "\(String(describing: movie?.rating ?? 0)) rating"
+        
+        if let ratingValue = movie?.rating, ratingValue > 0.0 {
+            rating = "\(String(describing: ratingValue)) rating"
+        } else {
+            rating = "Rating not avaibale"
+        }
         
         if let path = movie?.posterPath as NSString? {
             image = imageCache.object(forKey: path) ?? #imageLiteral(resourceName: "default_image")

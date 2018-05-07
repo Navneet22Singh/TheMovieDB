@@ -22,7 +22,7 @@ class MatserTableViewCellViewModelSpecs: QuickSpec {
         }
         
         describe("Verify view models attributes") {
-            context("when intialised", closure: {
+            context("when initialized", closure: {
                 it("should have correct query", closure: {
                     expect(viewModel.query) == category.descSortDescriptor
                 })

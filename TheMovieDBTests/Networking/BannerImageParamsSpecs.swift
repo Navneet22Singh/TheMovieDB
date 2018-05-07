@@ -21,7 +21,7 @@ class BannerImageParamsSpecs: QuickSpec {
         }
         
         describe("Verify service params") {
-            context("when intialised", closure: {
+            context("when initialized", closure: {
                 it("should have correct url string", closure: {
                     expect(params.urlString) == "https://image.tmdb.org/t/p/w500/2DtPSyODKWXluIRV7PVru0SSzja.jpg"
                 })
