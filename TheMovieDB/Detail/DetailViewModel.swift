@@ -17,10 +17,7 @@ struct DetailViewModel {
     let rating: String?
     let image: UIImage
     
-    let imageCache: NSCache<NSString, UIImage>
-    
-    init(movie: Movie?, cache: NSCache<NSString, UIImage>) {
-        imageCache = cache
+    init(movie: Movie?) {
         movieName = movie?.title
         overview = movie?.overview
         
@@ -31,7 +28,7 @@ struct DetailViewModel {
         }
         
         if let path = movie?.posterPath as NSString? {
-            image = imageCache.object(forKey: path) ?? #imageLiteral(resourceName: "default_image")
+            image = Caching.shared.image(forKey: path) ?? #imageLiteral(resourceName: "default_image")
         } else {
             image = #imageLiteral(resourceName: "default_image")
         }

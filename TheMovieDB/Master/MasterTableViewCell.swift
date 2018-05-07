@@ -53,7 +53,7 @@ extension MasterTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MasterCollectionViewCell.self), for: indexPath)
         if let cell = cell as? MasterCollectionViewCell {
-            cell.configureView(with: MasterCollectionViewCellModel(path: viewModel?.movies[safe: indexPath.row]?.posterPath, cache: viewModel?.cache))
+            cell.configureView(with: MasterCollectionViewCellModel(path: viewModel?.movies[safe: indexPath.row]?.posterPath))
         }
         return cell
     }

@@ -36,6 +36,7 @@
 		53B8C95B20A041F00081C667 /* MasterCollectionViewCellModelSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B8C95A20A041F00081C667 /* MasterCollectionViewCellModelSpecs.swift */; };
 		53B8C95E20A067A30081C667 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B8C95D20A067A30081C667 /* Array+Extension.swift */; };
 		53B8C96020A069440081C667 /* DetailViewModelSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B8C95F20A069440081C667 /* DetailViewModelSpecs.swift */; };
+		53B8C96220A06C2E0081C667 /* Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B8C96120A06C2E0081C667 /* Caching.swift */; };
 		632CBA1843F9E207A054314E /* Pods_TheMovieDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629C7CD6FE11F91D9BF25B83 /* Pods_TheMovieDB.framework */; };
 		DF16A5E7A5BED35825108314 /* Pods_TheMovieDBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99AF32DFC7253B909DE0D32 /* Pods_TheMovieDBTests.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,7 @@
 		53B8C95A20A041F00081C667 /* MasterCollectionViewCellModelSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCollectionViewCellModelSpecs.swift; sourceTree = "<group>"; };
 		53B8C95D20A067A30081C667 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		53B8C95F20A069440081C667 /* DetailViewModelSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelSpecs.swift; sourceTree = "<group>"; };
+		53B8C96120A06C2E0081C667 /* Caching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caching.swift; sourceTree = "<group>"; };
 		629C7CD6FE11F91D9BF25B83 /* Pods_TheMovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D99AF32DFC7253B909DE0D32 /* Pods_TheMovieDBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				533CAE35209F0D5F000839D9 /* AppDelegate.swift */,
+				53B8C96120A06C2E0081C667 /* Caching.swift */,
 				53B8C95C20A0677E0081C667 /* Extensions */,
 				533CAE78209F2947000839D9 /* Detail */,
 				533CAE79209F294D000839D9 /* Master */,
@@ -428,6 +431,7 @@
 				533CAE7C209F342B000839D9 /* ServiceController.swift in Sources */,
 				53B8C94B20A031410081C667 /* BannerImageParams.swift in Sources */,
 				53B8C95E20A067A30081C667 /* Array+Extension.swift in Sources */,
+				53B8C96220A06C2E0081C667 /* Caching.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,20 +12,22 @@ import UIKit
 class MasterCollectionViewCellModel {
     
     let defaultImage = #imageLiteral(resourceName: "default_image")
-    let imageCache: NSCache<NSString, UIImage>?
     let imagePath: String?
     
     var image: UIImage?
     
-    init(path: String?, cache: NSCache<NSString, UIImage>?) {
-        imageCache = cache
+    init(path: String?) {
         imagePath = path
         
-        if let path = path as NSString? {
-            image = imageCache?.object(forKey: path)
+        if let key = path as NSString? {
+            image = Caching.shared.image(forKey: key)
         } else {
             image = defaultImage
         }
+    }
+    
+    fileprivate func cacheImage(_ image: UIImage, forKey key: String) {
+        Caching.shared.setImage(image, forKey: key as NSString)
     }
     
     func downloadImage(_ serviceController: Fetchable = ServiceController(), completion: @escaping ((Bool) -> ())) {
@@ -43,7 +45,7 @@ class MasterCollectionViewCellModel {
                 return
             }
 
-            self?.imageCache?.setObject(image, forKey: path as NSString)
+            self?.cacheImage(image, forKey: path)
             self?.image = image
             completion(true)
         }

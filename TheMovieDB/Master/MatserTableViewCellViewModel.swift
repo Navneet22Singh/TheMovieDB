@@ -13,14 +13,12 @@ class MasterTableViewCellViewModel {
 
     let query: String
     var currentPage: Int = 1
-    let cache: NSCache<NSString, UIImage>
     var movies: [Movie] = []
     var totalPages: Int = 1
 
-    init(query: String, currentPage: Int, cache: NSCache<NSString, UIImage>) {
+    init(query: String, currentPage: Int) {
         self.query = query
         self.currentPage = currentPage
-        self.cache = cache
     }
     
     func fetch(for page: Int, serviceController: Fetchable = ServiceController(), completion: @escaping ((Bool) -> ())) {

@@ -14,7 +14,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
     let viewModel = MasterViewModel()
-    let cache = NSCache<NSString, UIImage>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-            controller.viewModel = DetailViewModel(movie: sender as? Movie, cache: cache)
+            controller.viewModel = DetailViewModel(movie: sender as? Movie)
             controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
             controller.navigationItem.leftItemsSupplementBackButton = true
         }
@@ -47,7 +46,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MasterTableViewCell.self), for: indexPath)
         if let cell = cell as? MasterTableViewCell {
-            let cellViewModel = MasterTableViewCellViewModel(query: viewModel.categories[indexPath.section].descSortDescriptor, currentPage: 1, cache: cache)
+            let cellViewModel = MasterTableViewCellViewModel(query: viewModel.categories[indexPath.section].descSortDescriptor, currentPage: 1)
             cell.configure(with: cellViewModel, parent: self)
         }
         
