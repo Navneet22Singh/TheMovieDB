@@ -15,10 +15,9 @@ class MatserTableViewCellViewModelSpecs: QuickSpec {
     
     override func spec() {
         var viewModel: MasterTableViewCellViewModel!
-        let cache = NSCache<NSString, UIImage>()
         let category = MoviesCategory.popular
         beforeEach() {
-            viewModel = MasterTableViewCellViewModel(query: category.descSortDescriptor, currentPage: 1, cache: cache)
+            viewModel = MasterTableViewCellViewModel(query: category.descSortDescriptor, currentPage: 1)
         }
         
         describe("Verify view models attributes") {
@@ -33,10 +32,6 @@ class MatserTableViewCellViewModelSpecs: QuickSpec {
                 
                 it("should have correct total pages", closure: {
                     expect(viewModel.totalPages) == 1
-                })
-
-                it("should have cache", closure: {
-                    expect(viewModel.cache) == cache
                 })
 
                 it("should have empty movies array", closure: {

@@ -15,11 +15,10 @@ class DetailViewModelSpecs: QuickSpec {
     
     override func spec() {
         var viewModel: DetailViewModel!
-        let cache = NSCache<NSString, UIImage>()
         let movie = Movie(title: "Batman", overview: "Sample", rating: 8.7, posterPath: "somevalue")
         
         beforeEach() {
-            viewModel = DetailViewModel(movie: movie, cache: cache)
+            viewModel = DetailViewModel(movie: movie)
         }
         
         describe("Verify view model's attributes") {
@@ -48,7 +47,7 @@ class DetailViewModelSpecs: QuickSpec {
             context("when initialized with nil poster path and rating", closure: {
                 beforeEach {
                     let movie = Movie(title: "Batman", overview: "Sample", rating: nil, posterPath: nil)
-                    viewModel = DetailViewModel(movie: movie, cache: cache)
+                    viewModel = DetailViewModel(movie: movie)
                 }
                 
                 it("should have image", closure: {
