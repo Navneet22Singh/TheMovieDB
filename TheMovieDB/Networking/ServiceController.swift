@@ -29,12 +29,9 @@ struct ServiceController: Fetchable {
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             guard error == nil, let data = data else {
+                print(error.debugDescription)
                 completion?(nil, error)
                 return
-            }
-            
-            if let strData = String(data: data, encoding: .utf8) {
-                print("Response:\n\(strData)")
             }
             
             let results = try? JSONDecoder().decode(MoviesResult.self, from: data)
@@ -53,6 +50,7 @@ struct ServiceController: Fetchable {
         
         let downloadTask = URLSession.shared.downloadTask(with: request, completionHandler: { (tempURL, response, error) in
             guard error == nil, let url = tempURL, let data = try? Data(contentsOf: url) else {
+                print(error.debugDescription)
                 completion?(nil, error)
                 return
             }
