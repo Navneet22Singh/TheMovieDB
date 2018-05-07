@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-struct DetailViewModel {
-    let title = "Details"
-    
+struct DetailViewModel {   
     let movieName: String?
     let overview: String?
     let rating: String?

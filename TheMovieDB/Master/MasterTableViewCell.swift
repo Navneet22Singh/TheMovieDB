@@ -67,7 +67,7 @@ extension MasterTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         
         guard
             let viewModel = viewModel,
-            indexPath.row == viewModel.movies.count - 3,
+            indexPath.row == viewModel.movies.count - 1,
             viewModel.currentPage < viewModel.totalPages,
             !isLoading
             else { return }

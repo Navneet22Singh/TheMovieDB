@@ -11,8 +11,6 @@ import CoreData
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-    var detailViewController: DetailViewController? = nil
-    var managedObjectContext: NSManagedObjectContext? = nil
     let viewModel = MasterViewModel()
 
     override func viewDidLoad() {

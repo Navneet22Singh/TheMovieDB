@@ -19,13 +19,13 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Details"
+
         configureView()
     }
     
     // Congigure View
     private func configureView() {
-        title = viewModel?.title
-        
         bannerImgView.image = viewModel?.image
         movieNameLabel.text = viewModel?.movieName
         ratingLabel.text = viewModel?.rating

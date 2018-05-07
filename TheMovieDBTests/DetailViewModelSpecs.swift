@@ -23,10 +23,6 @@ class DetailViewModelSpecs: QuickSpec {
         
         describe("Verify view model's attributes") {
             context("when initialized with poster path", closure: {
-                it("should have correct title", closure: {
-                    expect(viewModel.title.lowercased()) == "Details".lowercased()
-                })
-                
                 it("should have correct movieName", closure: {
                     expect(viewModel.movieName) == movie.title
                 })
